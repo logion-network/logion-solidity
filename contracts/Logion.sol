@@ -4,12 +4,12 @@ pragma solidity 0.8.17;
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract Logion {
-    string contractAddress;
+    string nonce;
     string collectionLocId;
     string certHost;
 
-    constructor(string memory _contractAddress, string memory _collectionLocId, string memory _certHost) {
-        contractAddress = _contractAddress;
+    constructor(string memory _nonce, string memory _collectionLocId, string memory _certHost) {
+        nonce = _nonce;
         collectionLocId = _collectionLocId;
         certHost = _certHost;
     }
@@ -20,7 +20,7 @@ contract Logion {
 
     function getItemId(uint256 tokenId) external view returns (string memory) {
         string memory itemId = string.concat(
-            contractAddress,
+            nonce,
             Strings.toString(tokenId)
         );
         uint256 hash = uint256(sha256 (bytes(itemId)));
