@@ -10,7 +10,7 @@ to a logion collection item.
 ### Installation
 
 ```console
-$ yarn install --dev @logion/solidity-contracts
+$ yarn install --dev @logion/solidity
 ```
 
 ### Usage
@@ -21,7 +21,7 @@ Once installed, you can use the contract in the library by importing them:
 pragma solidity ^0.8.17;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
-import "@logion/contracts/Logion.sol";
+import "@logion/solidity/contracts/Logion.sol";
 
 contract MyCollectible is ERC1155, Logion {
     constructor()
