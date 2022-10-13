@@ -447,9 +447,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@logion/solidity-contracts@workspace:.":
+"@logion/solidity@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@logion/solidity-contracts@workspace:."
+  resolution: "@logion/solidity@workspace:."
   dependencies:
     "@ethersproject/abi": ^5.4.7
     "@ethersproject/providers": ^5.4.7

@@ -1,5 +1,5 @@
 {
-  "name": "@logion/solidity-contracts",
+  "name": "@logion/solidity",
   "description": "Logion Smart Contract library for Solidity",
   "version": "0.1.0-1",
   "files": [
