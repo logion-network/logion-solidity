@@ -9,10 +9,10 @@
   "packageManager": "yarn@3.2.3",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/logion-network/logion-solidity-contracts.git"
+    "url": "git+https://github.com/logion-network/logion-solidity.git"
   },
   "bugs": {
-    "url": "https://github.com/logion-network/logion-solidity-contracts/issues"
+    "url": "https://github.com/logion-network/logion-solidity/issues"
   },
   "author": "Logion Team",
   "license": "Apache-2.0",
