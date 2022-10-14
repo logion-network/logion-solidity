@@ -1,7 +1,7 @@
 {
   "name": "@logion/solidity",
   "description": "Logion Smart Contract library for Solidity",
-  "version": "0.1.0-2",
+  "version": "0.1.0-3",
   "files": [
     "**/*.sol",
     "/artifacts/contracts/**/*.json"
@@ -19,11 +19,13 @@
   "scripts": {
     "build": "yarn hardhat compile",
     "clean": "yarn hardhat clean",
-    "test": "yarn hardhat test"
+    "test": "yarn hardhat test",
+    "generate-sample-metadata": "ts-node scripts/generate_metadata.ts"
   },
   "devDependencies": {
     "@ethersproject/abi": "^5.4.7",
     "@ethersproject/providers": "^5.4.7",
+    "@logion/client": "^0.14.0-6",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",

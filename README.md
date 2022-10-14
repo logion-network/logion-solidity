@@ -10,7 +10,7 @@ to a logion collection item.
 ### Installation
 
 ```console
-$ yarn install --dev @logion/solidity
+$ yarn add --dev @logion/solidity
 ```
 
 ### Usage
@@ -27,7 +27,7 @@ contract MyCollectible is ERC1155, Logion {
     constructor()
         ERC1155("https://some.domain/{id}.json")
         Logion(
-            Strings.toHexString(address(this)), // The address of the contract is being used to generate a unique item ID per token
+            "202210131727", // Must be unique across all contracts minting tokens for below collection LOC
             "334801581596596632473758891935041239976", // The collection LOC ID
             "certificate.logion.network" // The domain for building a logion certificate URL
         )
@@ -35,3 +35,20 @@ contract MyCollectible is ERC1155, Logion {
     }
 }
 ```
+
+## Generating metadata
+
+It is advised to generate the metadata linked to your tokens programmatically
+and to include logion data. This repository contains
+[an example script](https://github.com/logion-network/logion-solidity/blob/main/scripts/generate_metadata.ts)
+which can be executed with the following command:
+
+```
+yarn generate-sample-metadata
+```
+
+This will generate the metadata JSON files in folder `sample_metadata`.
+See the code of the script for more details.
+
+This is just an example, developers should copy the script in their own project and
+ajust it for their needs.

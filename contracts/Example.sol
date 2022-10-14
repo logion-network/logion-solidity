@@ -10,7 +10,7 @@ contract Example is Logion, ERC1155 {
     constructor()
         ERC1155("https://some.domain/{id}.json")
         Logion(
-            Strings.toHexString(address(this)),
+            "202210131727", // Must be unique across all contracts minting tokens for below collection LOC
             "334801581596596632473758891935041239976",
             "certificate.logion.network"
         )

@@ -22,12 +22,12 @@ describe("Example", function () {
 
     it("Should compute expected item ID", async () => {
       const { contract } = await loadFixture(deploy);
-      expect(await contract.getItemId(0)).to.equal("0xac82d44aa7abdb4b08a1aaab3fa3a94559ba5e57a0068e56b19417708c2ced48");
+      expect(await contract.getItemId(0)).to.equal("0x332e9c2d47dbe5d228518a955c84747782af7751f08130d3c3d5d24925eeeee2");
     });
 
     it("Should compute expected certificate URL", async () => {
       const { contract } = await loadFixture(deploy);
-      expect(await contract.getCertificateUrl(0)).to.equal("https://certificate.logion.network/public/certificate/334801581596596632473758891935041239976/0xac82d44aa7abdb4b08a1aaab3fa3a94559ba5e57a0068e56b19417708c2ced48");
+      expect(await contract.getCertificateUrl(0)).to.equal("https://certificate.logion.network/public/certificate/334801581596596632473758891935041239976/0x332e9c2d47dbe5d228518a955c84747782af7751f08130d3c3d5d24925eeeee2");
     });
   });
 });
