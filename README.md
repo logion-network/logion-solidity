@@ -10,7 +10,7 @@ to a logion collection item.
 ### Installation
 
 ```console
-$ yarn install --dev @logion/solidity
+$ yarn add --dev @logion/solidity
 ```
 
 ### Usage
