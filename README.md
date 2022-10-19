@@ -18,7 +18,7 @@ $ yarn add --dev @logion/solidity
 Once installed, you can use the contract in the library by importing them:
 
 ```solidity
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 import "@logion/solidity/contracts/Logion.sol";
