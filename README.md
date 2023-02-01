@@ -40,7 +40,7 @@ contract MyCollectible is ERC1155, Logion {
 
 It is advised to generate the metadata linked to your tokens programmatically
 and to include logion data. This repository contains
-[an example script](https://github.com/logion-network/logion-solidity/blob/main/scripts/generate_metadata.ts)
+[an example script](https://github.com/logion-network/logion-solidity/blob/main/scripts/generate_metadata.mts)
 which can be executed with the following command:
 
 ```
@@ -48,7 +48,27 @@ yarn generate-sample-metadata
 ```
 
 This will generate the metadata JSON files in folder `sample_metadata`.
-See the code of the script for more details.
+See the code of the script for more details. The parameters of the script can be
+found [here](https://github.com/logion-network/logion-solidity/blob/main/scripts/tokens.mts).
+
+This is just an example, developers should copy the script in their own project and
+ajust it for their needs.
+
+## Importing tokens into a logion collection
+
+** WARNING: the script described below actually submits transactions to the logion chain. As a result, fees are applied and submitted data can not be corrected later.**
+
+It is advised to import your tokens programmatically. This repository contains
+[an example script](https://github.com/logion-network/logion-solidity/blob/main/scripts/import_items.mts)
+which can be executed with the following command:
+
+```
+yarn import-sample-items
+```
+
+This will add one item per token into a given logion collection.
+See the code of the script for more details. The parameters of the script can be
+found [here](https://github.com/logion-network/logion-solidity/blob/main/scripts/tokens.mts).
 
 This is just an example, developers should copy the script in their own project and
 ajust it for their needs.
