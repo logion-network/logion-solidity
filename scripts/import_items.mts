@@ -9,7 +9,7 @@ import { Keyring } from '@polkadot/api';
 import { waitReady } from "@polkadot/wasm-crypto";
 import { exit } from 'process';
 import FormData from "form-data";
-import { TOKENS, NONCE, COLLECTION_LOC_ID, CONTRACT_ADDRESS, TOKEN_TYPE, SURI, KEY_TYPE, RPC, DIRECTORY } from "./tokens.mts";
+import { TOKENS, NONCE, COLLECTION_LOC_ID, CONTRACT_ADDRESS, TOKEN_TYPE, SURI, KEY_TYPE, RPC, DIRECTORY } from "./tokens.mjs";
 
 async function main() {
   await waitReady();
