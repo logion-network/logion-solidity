@@ -33,8 +33,8 @@ async function main() {
   }
 }
 
-function certificateUrl(contractAddress: string, tokenId: string): string {
-  return `https://${CERTIFICATE_HOST}/public/certificate/${COLLECTION_LOC_ID}/${generateEthereumTokenItemId(contractAddress, tokenId)}`;
+function certificateUrl(nonce: string, tokenId: string): string {
+  return `https://${CERTIFICATE_HOST}/public/certificate/${COLLECTION_LOC_ID}/${generateEthereumTokenItemId(nonce, tokenId)}`;
 }
 
 main().catch((error) => {
