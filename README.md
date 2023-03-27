@@ -3,7 +3,12 @@
 Smart contracts establishing the link between your tokens and the logion network.
 
 Currently, a single contract is provided: `Logion`. This contract links an NFT (e.g. ERC721 or ERC1155)
-to a logion collection item.
+to a logion collection item. Note that the metadata associated with your tokens should also include
+logion properties (see Scripts > Generating metadata below).
+
+In order to fully protect your tokens, in addition to implementing the above contract, collection items
+must be created in the logion network. This will establish a bi-directional link between logion and your tokens.
+This project provides some scripts provided as an example of how to add items to a logion collection.
 
 ## Overview
 
@@ -36,7 +41,16 @@ contract MyCollectible is ERC1155, Logion {
 }
 ```
 
-## Generating metadata
+## Scripts
+
+### Adding items to a collection
+
+** WARNING: the items created by this script do not have any file nor are linked to an actual token, it should only be used for testing purpose or as a starting point to writing your own item creation logic.**
+
+This [script](https://github.com/logion-network/logion-solidity/blob/main/scripts/import_items_test.mts) is a very simple
+example of how to add items to a collection LOC programmatically.
+
+### Generating metadata
 
 It is advised to generate the metadata linked to your tokens programmatically
 and to include logion data. This repository contains
@@ -54,7 +68,7 @@ found [here](https://github.com/logion-network/logion-solidity/blob/main/scripts
 This is just an example, developers should copy the script in their own project and
 ajust it for their needs.
 
-## Importing tokens into a logion collection
+### Importing tokens into a logion collection
 
 ** WARNING: the script described below actually submits transactions to the logion chain. As a result, fees are applied and submitted data can not be corrected later.**
 
