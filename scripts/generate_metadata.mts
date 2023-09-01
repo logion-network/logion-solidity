@@ -21,7 +21,7 @@ async function main() {
       properties: {
         ...token.properties,
         collection_loc_id: COLLECTION_LOC_ID,
-        item_id: generateEthereumTokenItemId(NONCE, token.id),
+        item_id: generateEthereumTokenItemId(NONCE, token.id).toHex(),
       },
       external_url: certificateUrl(NONCE, token.id),
     };
@@ -34,7 +34,7 @@ async function main() {
 }
 
 function certificateUrl(nonce: string, tokenId: string): string {
-  return `https://${CERTIFICATE_HOST}/public/certificate/${COLLECTION_LOC_ID}/${generateEthereumTokenItemId(nonce, tokenId)}`;
+  return `https://${CERTIFICATE_HOST}/public/certificate/${COLLECTION_LOC_ID}/${generateEthereumTokenItemId(nonce, tokenId).toHex()}`;
 }
 
 main().catch((error) => {

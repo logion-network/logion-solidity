@@ -24,7 +24,8 @@ async function main() {
   });
 
   console.log(`Authenticating as ${keypair.address}`);
-  const authenticatedClient = await client.authenticate([ keypair.address ], signer);
+  const accountId = client.logionApi.queries.getValidAccountId(keypair.address, "Polkadot");
+  const authenticatedClient = await client.authenticate([ accountId ], signer);
   const locs = await authenticatedClient.locsState();
   const collectionLoc = locs.findById(UUID.fromDecimalStringOrThrow(COLLECTION_LOC_ID));
   if(!(collectionLoc instanceof ClosedCollectionLoc)) {
@@ -39,6 +40,7 @@ async function main() {
     const itemToken: ItemTokenWithRestrictedType = {
       type: TOKEN_TYPE,
       id: `{"contract":"${CONTRACT_ADDRESS}","id":"${token.id}"}`,
+      issuance: 1n,
     };
     const itemFiles = token.files.map(file => new ItemFileWithContent({
       name: file.name,

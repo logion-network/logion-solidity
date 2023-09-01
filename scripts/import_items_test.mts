@@ -2,8 +2,8 @@
 //
 // You may adjust the parameters in tokens.mts file.
 
-import { LogionClient, KeyringSigner, ClosedCollectionLoc, ISubmittableResult, SignAndSendStrategy, hashString } from '@logion/client';
-import { UUID } from "@logion/node-api";
+import { LogionClient, KeyringSigner, ClosedCollectionLoc, ISubmittableResult, SignAndSendStrategy } from '@logion/client';
+import { UUID, Hash } from "@logion/node-api";
 import { Keyring } from '@polkadot/api';
 import { waitReady } from "@polkadot/wasm-crypto";
 import { exit } from 'process';
@@ -29,7 +29,8 @@ async function main() {
   });
 
   console.log(`Authenticating as ${keypair.address}`);
-  const authenticatedClient = await client.authenticate([ keypair.address ], signer);
+  const accountId = client.logionApi.queries.getValidAccountId(keypair.address, "Polkadot");
+  const authenticatedClient = await client.authenticate([ accountId ], signer);
   const locs = await authenticatedClient.locsState();
   const collectionLoc = locs.findById(UUID.fromDecimalStringOrThrow(COLLECTION_LOC_ID));
   if(!(collectionLoc instanceof ClosedCollectionLoc)) {
@@ -40,7 +41,7 @@ async function main() {
   for(let i = 0; i < 10; ++i) {
     console.log(`Importing token ${i}`);
 
-    const itemId = hashString(`${i}`);
+    const itemId = Hash.of(`${i}`);
     closedCollectionLoc = await closedCollectionLoc.addCollectionItem({
       itemId,
       itemDescription: `Some description for ${i}`,
